@@ -16,5 +16,16 @@ export const getAllRecipes = () => {
 //         .then(res => res.json())
 // }
 
+export const createRecipe = (recipe) => {
+    return fetch("http://localhost:8000/recipes", {
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Token ${localStorage.getItem("auth_token")}`
+        } ,
+        body: JSON.stringify(recipe)
+    })
+        .then(res => res.json())
+}
+
 // TO-DO: Add a fetch call to get recipes by category
 // TO-DO: Add a fetch call to get recipes by user
