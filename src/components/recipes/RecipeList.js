@@ -1,14 +1,17 @@
 import { useEffect, useState } from "react";
 import { getAllRecipes } from "../../managers/RecipeManager";
+import { useNavigate } from "react-router-dom";
 
 export const RecipeList = () => {
   const [recipes, setRecipes] = useState([]);
+  const navigate = useNavigate()
 
   useEffect(() => {
     getAllRecipes().then(data => setRecipes(data))
   }, [])
 
   return (
+    <>
     <article className="recipes">
         {
             recipes.map(recipe => {
@@ -26,5 +29,8 @@ export const RecipeList = () => {
             })
         }
     </article>
+    <button className="actions__create"
+        onClick={() => navigate("/recipes/create")}>Share a Recipe</button>
+    </>
   )
 };
