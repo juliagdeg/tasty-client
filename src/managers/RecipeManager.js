@@ -18,6 +18,7 @@ export const getAllRecipes = () => {
 
 export const createRecipe = (recipe) => {
     return fetch("http://localhost:8000/recipes", {
+        method: "POST",
         headers: {
             "Content-Type": "application/json",
             "Authorization": `Token ${localStorage.getItem("auth_token")}`
