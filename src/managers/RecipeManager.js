@@ -7,14 +7,14 @@ export const getAllRecipes = () => {
         .then(res => res.json())
 }
 
-// export const getRecipeById = (id) => {
-//     return fetch(`http://localhost:8000/recipes/${id}`, {
-//         headers: {
-//             "Authorization": `Token ${localStorage.getItem("auth_token")}`
-//         }
-//     })
-//         .then(res => res.json())
-// }
+export const getRecipeById = (id) => {
+    return fetch(`http://localhost:8000/recipes/${id}`, {
+        headers: {
+            "Authorization": `Token ${localStorage.getItem("auth_token")}`
+        }
+    })
+        .then(res => res.json())
+}
 
 export const createRecipe = (recipe) => {
     return fetch("http://localhost:8000/recipes", {
