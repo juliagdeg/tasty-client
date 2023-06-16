@@ -1,58 +1,49 @@
-import { useEffect, useState } from "react";
-import { getUserById } from "../../managers/UserManager";
-import { getAllRecipes } from "../../managers/RecipeManager";
-import { useParams } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import { getUserProfile } from '../../managers/UserManager';
 
 export const Profile = () => {
-    const [currentUser, setCurrentUser] = useState({});
-    const [recipes, setRecipes] = useState([]);
-    const [userRecipes, setUserRecipes] = useState([]);
-    const { userId } = useParams();
+  const [profileData, setProfileData] = useState(null);
 
-    console.log("userId", userId)
-  
-    useEffect(() => {
-        console.log("Fetch user by id:", userId);
-      getUserById(userId).then((res) => setCurrentUser(res));
-    }, []);
-  
-    useEffect(() => {
-      getAllRecipes().then((data) => {
-        setRecipes(data);
-      });
-    }, []);
-  
-    useEffect(() => {
-      const myRecipes = recipes.filter((recipe) => recipe.author === userId);
-      setUserRecipes(myRecipes);
-    }, [recipes, userId]);
-  
-    return (
-      <>
-        <h2>My Profile</h2>
-        <section key={`tasty-user--${userId}`} className="">
-          <p>Username: {currentUser.user?.username}</p>
-          <p>First Name: {currentUser.user?.first_name}</p>
-          <p>Last Name: {currentUser.user?.last_name}</p>
-          <p>Profile Pic: {currentUser?.profile_image_url}</p>
-          <p>Date Joined: {currentUser?.created_on}</p>
-          <p>Bio: {currentUser?.bio}</p>
-        </section>
+  useEffect(() => {
+    const fetchProfile = async () => {
+      try {
+        const data = await getUserProfile();
+        setProfileData(data);
+      } catch (error) {
+        console.error('Error fetching profile:', error);
+      }
+    };
+
+    fetchProfile();
+  }, []);
+
+  return (
+    <div>
+      <h1>User Profile</h1>
+      {profileData ? (
         <div>
-          {userRecipes.map((recipe) => (
-            <section key={`recipe--${recipe.id}`} className="my_recipe">
-              <h3>Recipe: {recipe.name}</h3>
-              <div>Posted by {recipe?.author?.user?.username}</div>
-              <div>Category: {recipe?.category?.name}</div>
-              <div>Posted on: {recipe.create_date}</div>
-              <div>Cook Time: {recipe.cook_time}</div>
-              <div>Prep Time: {recipe.prep_time}</div>
-              <div>Total Time: {recipe.total_time}</div>
-              <div>Ingredients: {recipe.ingredients}</div>
-              <div>Preparation: {recipe.preparation}</div>
-            </section>
-          ))}
+          <p>Username: {profileData?.author?.username}</p>
+          <p>First Name: {profileData?.author?.first_name}</p>
+          <p>Last Name: {profileData?.author?.last_name}</p>
+
+          <h2>Recipes</h2>
+          {profileData.recipes && profileData.recipes.length > 0 ? (
+            <ul>
+              {profileData.recipes.map((recipe) => (
+                <li key={recipe.id}>
+                  <h3>{recipe.name}</h3>
+                  <p>Category: {recipe.category}</p>
+                  {/* Render other recipe fields */}
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p>No recipes found.</p>
+          )}
         </div>
-      </>
-    );
-  };
+      ) : (
+        <p>Loading profile...</p>
+      )}
+    </div>
+  );
+};

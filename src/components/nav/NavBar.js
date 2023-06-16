@@ -3,6 +3,7 @@ import "./NavBar.css"
 
 export const NavBar = () => {
     const navigate = useNavigate()
+
     return (
         <ul className="navbar">
             <li className="navbar__item">
@@ -11,18 +12,14 @@ export const NavBar = () => {
             <li className="navbar__item">
                 <Link className="navbar__link" to="/profile">My Profile</Link>
             </li>
-            <li className="navbar__item">
-                Navigation link
-            </li>
             {
-                (localStorage.getItem("lu_token") !== null) ?
+                (localStorage.getItem("auth_token") !== null) ?
                     <li className="nav-item">
                         <button className="nav-link fakeLink"
                             onClick={() => {
-                                localStorage.removeItem("lu_token")
+                                localStorage.removeItem("auth_token")
                                 navigate('/login')
-                            }}
-                        >Logout</button>
+                            }}>Logout</button>
                     </li> :
                     <>
                         <li className="nav-item">
