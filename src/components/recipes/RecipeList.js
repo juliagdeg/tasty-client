@@ -17,7 +17,7 @@ export const RecipeList = () => {
             recipes.map(recipe => {
                 return <section key={`recipe--${recipe.id}`} className="recipe">
                     <h3>Recipe: {recipe.name}</h3>
-                    <div>Posted by {recipe?.author?.full_name}</div>
+                    <div>Posted by {recipe?.author?.username}</div>
                     <div>Category: {recipe?.category?.name}</div>\
                     <div>Posted on: {recipe.create_date}</div>
                     <div>Cook Time: {recipe.cook_time}</div>
