@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom"
 import { registerUser } from "../../managers/AuthManager"
 import "./Auth.css"
 
-export const Register = ( { setToken }) => {
+export const Register = () => {
     const firstName = useRef()
     const lastName = useRef()
     const username = useRef()

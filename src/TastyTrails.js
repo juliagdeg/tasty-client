@@ -11,7 +11,7 @@ import "./Tasty.css"
 
 export const TastyTrails = () => {
 
-  const setToken = (auth_token ) => {
+  const setToken = (auth_token) => {
 		let token = {
 			"token": auth_token
 		}
