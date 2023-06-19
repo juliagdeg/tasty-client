@@ -28,5 +28,14 @@ export const createRecipe = (recipe) => {
         .then(res => res.json())
 }
 
+export const deleteRecipe = (id) => {
+    return fetch(`http://localhost:8000/recipes/${id}`, {
+      method: "DELETE",
+      headers: {
+        Authorization: `Token ${localStorage.getItem("auth_token")}`,
+      },
+    });
+  };
+
 // TO-DO: Add a fetch call to get recipes by category
 // TO-DO: Add a fetch call to get recipes by user
