@@ -5,37 +5,42 @@ export const Profile = () => {
   const [profileData, setProfileData] = useState(null);
 
   useEffect(() => {
-    const fetchProfile = async () => {
-      try {
-        const data = await getUserProfile();
-        setProfileData(data);
-      } catch (error) {
-        console.error('Error fetching profile:', error);
-      }
-    };
-
-    fetchProfile();
+    fetchUserProfile();
   }, []);
+
+  const fetchUserProfile = async () => {
+    try {
+      const response = await getUserProfile();
+      setProfileData(response);
+    } catch (error) {
+      console.error("Error fetching user profile:", error);
+    }
+  };
 
   return (
     <div>
       <h1>User Profile</h1>
       {profileData ? (
         <div>
-          <p>Username: {profileData?.author?.username}</p>
-          <p>First Name: {profileData?.author?.first_name}</p>
-          <p>Last Name: {profileData?.author?.last_name}</p>
+          <p>Username: {profileData.author.username}</p>
+          <p>First Name: {profileData.author.first_name}</p>
+          <p>Last Name: {profileData.author.last_name}</p>
 
           <h2>Recipes</h2>
-          {profileData.recipes && profileData.recipes.length > 0 ? (
+          {profileData.recipe ? (
             <ul>
-              {profileData.recipes.map((recipe) => (
-                <li key={recipe.id}>
-                  <h3>{recipe.name}</h3>
-                  <p>Category: {recipe.category}</p>
-                  {/* Render other recipe fields */}
-                </li>
-              ))}
+              <li key={profileData.recipe.id}>
+                <h3>{profileData.recipe.name}</h3>
+                <p>Posted on {profileData.recipe.create_date}</p>
+                <p>{profileData.recipe.image_path}</p>
+                <p>Category: {profileData.recipe.category.name}</p>
+                <p>Cook Time: {profileData.recipe.cook_time}</p>
+                <p>Prep Time: {profileData.recipe.prep_time}</p>
+                <p>Total Time: {profileData.recipe.total_time}</p>
+                <p>Summary: {profileData.recipe.summary}</p>
+                <p>Ingredients: {profileData.recipe.ingredients}</p>
+                <p>Preparation: {profileData.recipe.preparation}</p>
+              </li>
             </ul>
           ) : (
             <p>No recipes found.</p>
