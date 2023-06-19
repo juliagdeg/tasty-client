@@ -19,22 +19,41 @@ export const RecipeEdit = () => {
     preparation: "",
     create_date: "",
   });
-  
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    getCategories().then((res) => setCategories(res));
-    getRecipeById(id).then((res) => setRecipe(res));
-  }, [id]);
+    fetchRecipeAndCategories();
+  }, []);
+
+  const fetchRecipeAndCategories = async () => {
+    try {
+      const [recipeData, categoriesData] = await Promise.all([
+        getRecipeById(id),
+        getCategories(),
+      ]);
+
+      setRecipe(recipeData);
+      setCategories(categoriesData);
+    } catch (error) {
+      console.error("Error fetching recipe and categories:", error);
+    }
+  };
 
   const handleInputChange = (evt) => {
     const { name, value } = evt.target;
-    setRecipe((prevRecipe) => ({ ...prevRecipe, [name]: value }));
+    setRecipe((prevRecipe) => ({
+      ...prevRecipe,
+      [name]: value,
+    }));
   };
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    editRecipe(recipe, id).then(() => navigate("/profile"));
+    editRecipe(recipe, id)
+      .then(() => navigate("/profile"))
+      .catch((error) => {
+        console.error("Error editing recipe:", error);
+      });
   };
 
   return (
