@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { getUserProfile } from '../../managers/UserManager';
+import { getUserProfile} from '../../managers/UserManager';
+import { deleteRecipe } from '../../managers/RecipeManager';
+import { useNavigate, useParams } from 'react-router-dom';
 
 export const Profile = () => {
   const [profileData, setProfileData] = useState(null);
+  const navigate = useNavigate()
+  // const { recipeId }= useParams()
 
   useEffect(() => {
     fetchUserProfile();
@@ -15,6 +19,16 @@ export const Profile = () => {
     } catch (error) {
       console.error("Error fetching user profile:", error);
     }
+  };
+
+  const handleDelete = (recipeId) => {
+    deleteRecipe(recipeId)
+      .then(() => {
+        window.location.reload();
+      })
+      .catch((error) => {
+        console.error("Error deleting recipe:", error);
+      });
   };
 
   return (
@@ -40,6 +54,9 @@ export const Profile = () => {
                 <p>Summary: {profileData.recipe.summary}</p>
                 <p>Ingredients: {profileData.recipe.ingredients}</p>
                 <p>Preparation: {profileData.recipe.preparation}</p>
+                <button onClick={() => handleDelete(profileData.recipe.id)}>
+                  Delete
+                </button>
               </li>
             </ul>
           ) : (
