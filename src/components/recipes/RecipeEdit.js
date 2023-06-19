@@ -191,7 +191,7 @@ export const RecipeEdit = () => {
         </div>
       </fieldset>
       <button type="submit" className="btn btn-primary">
-        Update Recipe
+        Save Recipe
       </button>
     </form>
     </div>
