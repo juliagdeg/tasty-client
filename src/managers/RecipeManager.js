@@ -37,5 +37,16 @@ export const deleteRecipe = (id) => {
     });
   };
 
+export const editRecipe = (recipe, id) => {
+    return fetch(`http://localhost:8000/recipes${id}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Token ${localStorage.getItem("auth_token")}`
+        },
+        body: JSON.stringify(recipe)
+    })
+}
+
 // TO-DO: Add a fetch call to get recipes by category
 // TO-DO: Add a fetch call to get recipes by user

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { getUserProfile} from '../../managers/UserManager';
 import { deleteRecipe } from '../../managers/RecipeManager';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
+
 
 export const Profile = () => {
   const [profileData, setProfileData] = useState(null);
@@ -57,6 +58,11 @@ export const Profile = () => {
                 <button onClick={() => handleDelete(profileData.recipe.id)}>
                   Delete
                 </button>
+                <Link to={`/recipes/edit/${profileData.recipe.id}`}>
+                  <button>
+                    Edit
+                  </button>
+                </Link>
               </li>
             </ul>
           ) : (
