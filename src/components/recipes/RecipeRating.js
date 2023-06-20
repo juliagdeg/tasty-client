@@ -1,40 +1,65 @@
-import { useState, useEffect } from "react"
-// import { useNavigate } from "react-router-dom"
-import { rateRecipe } from "../../managers/RecipeManager"
+// RatingForm.js
+import { useState } from "react";
+import { rateRecipe } from "../../managers/RecipeManager";
+import { useNavigate, useParams } from "react-router-dom";
 
 export const RatingForm = () => {
-    const [score, setScore] = useState("");
+    const navigate = useNavigate();
+    const { id } = useParams()
 
-    const handleScoreChange = (e) => {
-        setScore(e.target.value);
-    };
+    const [newScore, setNewScore] = useState({
+        score: 0
+    });
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-
-        // Perform validation on the score
-        const ratingData = {
-            score: rating,
-        };
-        
-        if (!score) {
-            // Handle validation error
-            return;
-        }
-
-        rateRecipe(recipeId, score)
-            .then(() => {
-                console.error(error);
-        })
-    };
-
-return (
-    <form onSubmit={handleSubmit}>
-        <label>
-            Score:
-            <input type="number" value={score} onChange={handleScoreChange} />
-        </label>
-        <button type="submit">Rate Recipe</button>
-    </form>
+    return (
+        <form className="rating_form">
+            <label>
+                Score: 
+            </label>
+            <input 
+                required autoFocus
+                type="number"
+                placeholder="Rate 1-5"
+                value={newScore.score} 
+                onChange={(evt) => {
+                const copy = { ...newScore };
+                copy.score = parseInt(evt.target.value);
+                setNewScore(copy);
+                }}
+            />
+            <button
+                onClick={(evt) => {
+                evt.preventDefault();
+                rateRecipe(id, newScore)
+                    .then(() => navigate("/recipes"))
+                    .catch((error) => console.error(error));
+                }}
+            className="btn btn-primary">
+                Rate Recipe
+            </button>
+        </form>
     );
-}
+};
+
+
+//   const handleScoreChange = (e) => {
+//     setScore(e.target.value);
+//   };
+
+//   const handleSubmit = (e) => {
+//     e.preventDefault();
+
+//     if (!score) {
+//       console.error("Score is required");
+//       return;
+//     }
+
+//     rateRecipe(id, score)
+//       .then((data) => {
+//         console.log("Recipe rated successfully", data);
+//         window.location.href = "/recipes";
+//       })
+//       .catch((error) => {
+//         console.error("Failed to rate the recipe.", error);
+//       });
+//   };
