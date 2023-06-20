@@ -59,29 +59,17 @@ export const rateRecipe = (recipeId, score) => {
   })
 };
 
-  // const url = `http://localhost:8000/recipes/${recipeId}/rate-recipe`;
+// TODO: Make a fetch call for recipe comments
+export const createRecipeComment = (recipeId, comment) => {
+    return fetch(`http://localhost:8000/recipes/${recipeId}/recipe-comments`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Token ${localStorage.getItem("auth_token")}`
+        },
+        body: JSON.stringify(comment)
+    })
+}
 
-  // return fetch(url, {
-  //   method: "POST",
-  //   headers: {
-  //     "Content-Type": "application/json",
-  //     Authorization: `Token ${localStorage.getItem("auth_token")}`,
-  //   },
-  //   body: JSON.stringify({ score: score }),
-  // })
-  //   .then((res) => {
-  //     if (res.ok) {
-  //       return res.json();
-  //     } else {
-  //       throw new Error("Failed to rate the recipe.");
-  //     }
-  //   })
-  //   .then((data) => {
-  //     return data;
-  //   })
-  //   .catch((error) => {
-  //     console.error(error);
-  //     throw error;
-  //   });
 // TO-DO: Add a fetch call to get recipes by category
 // TO-DO: Add a fetch call to get recipes by user

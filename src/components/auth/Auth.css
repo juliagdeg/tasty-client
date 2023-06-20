@@ -33,7 +33,7 @@ fieldset {
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
-    color: #495057;
+    color: #1365b8;
     background-color: #fff;
     background-clip: padding-box;
     border: 1px solid #ced4da;
@@ -53,7 +53,7 @@ fieldset {
     min-height: 25rem;
     min-width: 45rem;
     padding: 0 5rem;
-    background-color: hsla(0,0%,100%,0.75);
+    background-color: hsla(51, 95%, 63%, 0.925);
     background-blend-mode: overlay;
     background-repeat: no-repeat;
 }

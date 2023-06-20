@@ -10,6 +10,9 @@ export const RecipeList = () => {
     getAllRecipes().then(data => setRecipes(data))
   }, [])
 
+  // TODO: interpolate username above each comment
+  // TODO: add a like/unlike feature on comment
+
   return (
     <>
     <article className="recipes">
@@ -26,10 +29,23 @@ export const RecipeList = () => {
                     <div>Total Time: {recipe.total_time}</div>
                     <div>Ingredients: {recipe.ingredients}</div>
                     <div>Preparation: {recipe.preparation}</div>
+                    <div>Comments</div>
+                    <ul>
+                      {recipe.comments.map((comment) => (
+                        <li key={comment.id}>
+                          {comment.content}
+                        </li>
+                      ))}
+                    </ul>
                     <button className="actions__rate"
                       onClick={() => {
                         navigate(`/recipes/${recipe.id}/rate-recipe`)}}>
                         Rate this Recipe
+                    </button>
+                    <button className="actions__comment"
+                      onClick={() => {
+                        navigate(`/recipes/${recipe.id}/recipe-comments`)}}>
+                          Comment
                     </button>
                 </section>
             })
