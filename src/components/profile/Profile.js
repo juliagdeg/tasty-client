@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { getUserProfile} from '../../managers/UserManager';
 import { deleteRecipe } from '../../managers/RecipeManager';
-import { useNavigate, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 export const Profile = () => {
   const [profileData, setProfileData] = useState(null);
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
   // const { recipeId }= useParams()
 
   useEffect(() => {
