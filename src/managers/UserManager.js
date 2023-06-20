@@ -9,6 +9,3 @@ export const getUserProfile = () => {
         console.error('Error fetching user profile:', error);
       });
   };
-  
-
-  
