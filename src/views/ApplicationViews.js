@@ -4,6 +4,7 @@ import { Register } from "../components/auth/Register"
 import { Authorized } from "./Authorized"
 import { RecipeList } from "../components/recipes/RecipeList"
 import { RecipeForm } from "../components/recipes/RecipeForm"
+import { RecipeEdit } from "../components/recipes/RecipeEdit"
 import { Profile } from "../components/profile/Profile"
 
 
@@ -16,6 +17,7 @@ export const ApplicationViews = () => {
                 {/* Add Routes here */}
                 <Route path="/recipes" element={<RecipeList />} />
                 <Route path="/recipes/create" element={<RecipeForm /> } />
+                <Route path="/recipes/edit/:id" element={<RecipeEdit /> } />
                 <Route path="/profile" element={<Profile /> } />
             </Route>
         </Routes>
