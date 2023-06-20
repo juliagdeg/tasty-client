@@ -7,6 +7,7 @@ import { RecipeForm } from "../components/recipes/RecipeForm"
 import { RecipeEdit } from "../components/recipes/RecipeEdit"
 import { Profile } from "../components/profile/Profile"
 import { RatingForm } from "../components/recipes/RecipeRating"
+import { Comment } from "../components/recipes/RecipeComment"
 
 
 export const ApplicationViews = () => {
@@ -20,6 +21,7 @@ export const ApplicationViews = () => {
                 <Route path="/recipes/create" element={<RecipeForm /> } />
                 <Route path="/recipes/edit/:id" element={<RecipeEdit /> } />
                 <Route path="/recipes/:id/rate-recipe" element={<RatingForm />} />
+                <Route path="/recipes/:id/recipe-comments" element={<Comment />} />
                 <Route path="/profile" element={<Profile /> } />
             </Route>
         </Routes>
