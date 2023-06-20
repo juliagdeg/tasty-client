@@ -38,7 +38,7 @@ export const deleteRecipe = (id) => {
   };
 
 export const editRecipe = (recipe, id) => {
-    return fetch(`http://localhost:8000/recipes${id}`, {
+    return fetch(`http://localhost:8000/recipes/${id}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json",
