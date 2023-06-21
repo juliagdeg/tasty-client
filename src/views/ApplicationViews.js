@@ -13,6 +13,7 @@ import { Comment } from "../components/recipes/RecipeComment"
 export const ApplicationViews = () => {
     return <>
         <Routes>
+            <Route path="/" element={<RecipeList />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route element={<Authorized />}>

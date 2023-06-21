@@ -24,6 +24,7 @@ export const RecipeForm = () => {
         total_time: "",
         ingredients: "",
         preparation: "",
+        family_style: false,
         create_date: new Date().toISOString().slice(0,10)
     })
 

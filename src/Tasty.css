@@ -27,3 +27,8 @@ p {
   font-family: Lilita One, cursive;
   text-align: center;
 }
+
+/* @font-face {
+  font-family: 'CustomFont';
+  src: url('./YourFontFile.ttf') format('truetype');
+  /* Additional font properties (e.g., font-weight, font-style) can be specified here */

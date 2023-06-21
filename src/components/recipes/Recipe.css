@@ -1,10 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap');
+
+/* @font-face {
+    font-family: 'CustomFont';
+    src: url('./YourFontFile.ttf') format('truetype');
+    /* Additional font properties (e.g., font-weight, font-style) can be specified here */
+  /* }
+  font-family: 'Work Sans', sans-serif; */ 
+
 :root {
     --tastyblue: #018ecb;
     --cornyellow: #ffde59;
     --slaybeige: #feffea;
     --hungryblue: #00477d;
-    --staryellow: #ffce38;
-    --Work-Sans: 'https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap'
+    --staryellow: #ffce38
 }
 
 /* RECIPE CARD STYLING */

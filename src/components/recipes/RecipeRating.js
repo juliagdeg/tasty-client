@@ -11,6 +11,7 @@ export const RatingForm = () => {
         score: 0
     });
 
+
     return (
         <form className="rating_form">
             <label>
@@ -41,6 +42,8 @@ export const RatingForm = () => {
     );
 };
 
+ // I'd really like to make the rating form into a modal on the RecipeList.js
+    // Or just an interactive star selection (radio button) with a modal that returns to the user a message saying the rating was successful
 
 //   const handleScoreChange = (e) => {
 //     setScore(e.target.value);
