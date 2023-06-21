@@ -1,0 +1,20 @@
+:root {
+    --tastyblue: #018ecb;
+    --cornyellow: #ffde59;
+    --slaybeige: #feffea;
+    --hungryblue: #00477d;
+    --staryellow: #ffce38;
+    --Work-Sans: 'https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap'
+}
+
+/* ADD CSS STYLING */
+
+.form_container {
+    padding-left: 50px;
+    padding-right: 25px;
+    padding-top: 10px;
+    padding-bottom: 25px;
+    /* margin: auto; */
+    /* display: flex;
+    flex-wrap: wrap; */
+}

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import { createRecipe } from "../../managers/RecipeManager"
 import { getCategories } from "../../managers/CategoryManager"
+import "./RecipeForm.css"
 
 export const RecipeForm = () => {
     const navigate = useNavigate()
@@ -39,7 +40,7 @@ export const RecipeForm = () => {
     // }
 
     return (
-        <form className="recipe_form">
+        <form className="form_container">
             <fieldset>
                 <div>
                     <label htmlFor="name">Name: </label>
@@ -228,7 +229,7 @@ export const RecipeForm = () => {
                 evt.preventDefault()
                 createRecipe(newRecipe)
                 .then(() => navigate("/recipes"))
-            }} className="btn btn-primary">
+            }} className="top-bottom_button">
                 Share Your Recipe!
             </button>
         </form>
