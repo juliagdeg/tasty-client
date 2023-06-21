@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getAllRecipes } from "../../managers/RecipeManager";
 import { useNavigate } from "react-router-dom";
+import "./Recipe.css"
 
 export const RecipeList = () => {
   const [recipes, setRecipes] = useState([]);
@@ -15,34 +16,39 @@ export const RecipeList = () => {
 
   return (
     <>
-    <article className="recipes">
+    <h2 className="homepage_header">Featured Recipes</h2>
+    <button className="top-bottom_button"
+        onClick={() => navigate("/recipes/create")}>
+          Share a Recipe
+    </button>
+      <article className="recipes">
         {
             recipes.map(recipe => {
                 return <section key={`recipe--${recipe.id}`} className="recipe">
-                    <h3>Recipe: {recipe.name}</h3>
-                    <div>Posted by {recipe?.author?.username}</div>
-                    <div>Rating {recipe.average_rating}</div>
-                    <div>Category: {recipe?.category?.name}</div>
-                    <div>Posted on: {recipe.create_date}</div>
-                    <div>Cook Time: {recipe.cook_time}</div>
-                    <div>Prep Time: {recipe.prep_time}</div>
-                    <div>Total Time: {recipe.total_time}</div>
-                    <div>Ingredients: {recipe.ingredients}</div>
-                    <div>Preparation: {recipe.preparation}</div>
-                    <div>Comments</div>
-                    <ul>
+                    <header className="recipe_header">Recipe: {recipe.name}</header>
+                    <div className="recipe_text">Posted by {recipe?.author?.username}</div>
+                    <div className="recipe_text">Rating {recipe.average_rating}</div>
+                    <div className="recipe_text">Category: {recipe?.category?.name}</div>
+                    <div className="recipe_text">Posted on: {recipe.create_date}</div>
+                    <div className="recipe_text">Cook Time: {recipe.cook_time}</div>
+                    <div className="recipe_text">Prep Time: {recipe.prep_time}</div>
+                    <div className="recipe_text">Total Time: {recipe.total_time}</div>
+                    <div className="recipe_text">Ingredients: {recipe.ingredients}</div>
+                    <div className="recipe_text">Preparation: {recipe.preparation}</div>
+                    <div className="comment_header">Comments</div>
+                    <div className="comment_container">
                       {recipe.comments.map((comment) => (
-                        <li key={comment.id}>
+                        <div key={comment.id} className="comment">
                           {comment.content}
-                        </li>
+                        </div>
                       ))}
-                    </ul>
-                    <button className="actions__rate"
+                    </div>
+                    <button className="left-right_button" type="edit__button"
                       onClick={() => {
                         navigate(`/recipes/${recipe.id}/rate-recipe`)}}>
                         Rate this Recipe
                     </button>
-                    <button className="actions__comment"
+                    <button className="left-right_button" type="edit__button"
                       onClick={() => {
                         navigate(`/recipes/${recipe.id}/recipe-comments`)}}>
                           Comment
@@ -51,10 +57,6 @@ export const RecipeList = () => {
             })
         }
     </article>
-    <button className="actions__create"
-        onClick={() => navigate("/recipes/create")}>
-          Share a Recipe
-    </button>
     </>
   )
 };

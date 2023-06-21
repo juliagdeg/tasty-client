@@ -1,3 +1,12 @@
+:root {
+  --tastyblue: #018ecb;
+  --cornyellow: #ffde59;
+  --slaybeige: #feffea;
+  --hungryblue: #00477d;
+  --staryellow: #ffce38;
+  --Work-Sans: 'https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap'
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -11,3 +20,82 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.left-right_button {
+  position: relative;
+  background-color: var(--slaybeige);
+  border: 2px solid var(--tastyblue);
+  color: var(--hungryblue);
+  font-weight: bold;
+  padding: 10px 20px;
+  z-index: 1;
+}
+
+.left-right_button::before,
+.left-right_button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  background-color: var(--cornyellow);
+  transition: width 0.5s ease;
+  z-index: -1;
+}
+
+.left-right_button::before {
+  left: 0;
+}
+
+.left-right_button::after {
+  right: 0;
+}
+
+.left-right_button:hover::before {
+  width: 50%;
+}
+
+.left-right_button:hover::after {
+  width: 50%;
+}
+
+.top-bottom_button {
+  position: relative;
+  background-color: var(--slaybeige);
+  border: 2px solid var(--tastyblue);
+  color: var(--hungryblue);
+  font-weight: bold;
+  margin: 1rem;
+  padding: 10px 20px;
+  z-index: 1;
+}
+
+.top-bottom_button::before,
+.top-bottom_button::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 0;
+  background-color: var(--cornyellow);
+  transition: height 0.5s ease;
+  z-index: -1;
+}
+
+.top-bottom_button::before {
+  top: 0;
+}
+
+.top-bottom_button::after {
+  bottom: 0;
+}
+
+.top-bottom_button:hover::before {
+  height: 50%;
+}
+
+.top-bottom_button:hover::after {
+  height: 50%;
+}
+
+/* left off styling the buttons */

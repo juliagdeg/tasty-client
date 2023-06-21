@@ -1,0 +1,76 @@
+:root {
+    --tastyblue: #018ecb;
+    --cornyellow: #ffde59;
+    --slaybeige: #feffea;
+    --hungryblue: #00477d;
+    --staryellow: #ffce38;
+    --Work-Sans: 'https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap'
+}
+
+/* RECIPE CARD STYLING */
+
+.recipes {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+}
+/* I would like a border color around the recipe card */
+/* Also need to implement image and image styling later */
+.recipe {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    background: linear-gradient(to bottom right, var(--hungryblue), var(--tastyblue));
+    border-radius: 10px;
+    padding: 0.5rem;
+    margin: 1rem;
+    width: 40%;
+    padding: auto;
+    box-shadow: 3px 3px 5px gray;
+}
+
+.recipe_header {
+    font-family: var(--Work-Sans);
+    color: var(--staryellow);
+    font-size: xx-large;
+    text-align: center;
+}
+
+.recipe_text {
+    width: 70%;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-family: var(--Work-Sans);
+    color: var(--slaybeige)
+}
+
+/* COMMENT DIV STYLING */
+
+.comment_header {
+    font-family: var(--Work-Sans);
+    color: var(--staryellow);
+    font-size: large;
+    text-align: center;
+}
+
+/* I want the comment section on each recipe to feel blocked off ?? */
+.comment_container {
+    color: var(--cornyellow)
+}
+
+.comment {
+    width: 70%;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-family: var(--Work-Sans);
+    color: var(--slaybeige)
+}
+
+.homepage_header {
+    font-family: var(--Work-Sans);
+    font-size: 35px;
+    text-align: left
+}
