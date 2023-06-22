@@ -35,7 +35,8 @@
 }
 
 .recipe_header {
-    font-family: var(--Work-Sans);
+    font-family: 'Raleway', sans-serif;
+    font-weight: bolder;
     color: var(--staryellow);
     font-size: xx-large;
     text-align: center;
@@ -46,7 +47,7 @@
     margin: auto;
     margin-top: 15px;
     margin-bottom: 15px;
-    font-family: var(--Work-Sans);
+    font-family: 'Raleway', sans-serif;
     color: var(--slaybeige)
 }
 

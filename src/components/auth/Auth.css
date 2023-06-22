@@ -1,3 +1,12 @@
+:root {
+    --tastyblue: #018ecb;
+    --cornyellow: #ffde59;
+    --slaybeige: #feffea;
+    --hungryblue: #00477d;
+    --staryellow: #ffce38;
+
+}
+
 .h1, h1 {
     font-size: 2.5rem;
 }
@@ -10,31 +19,40 @@ fieldset {
 }
 
 .form--login {
-    display: inline-block;
+    display: block;
     margin: 0 auto;
-    text-align: left;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 100px;
 }
 
-.form--login > fieldset > input[type="email"],
+.form--login > fieldset > input[type="username"],
 .form--login > fieldset > input[type="password"] {
     width: 25em;
+    /* display: inline-block; */
+    border-radius: 50px;
+    /* align-items: center; */
+}
+
+.login__header {
+    text-align: center;
 }
 
 .label--login {
     width: 8rem;
     display: inline-block;
+    text-align: center;
 }
 
 .form-control {
-    display: block;
-    width: 94%;
+    /* display: block; */
     height: calc(1.5em + .75rem + 2px);
     padding: .375rem .75rem;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
     color: #1365b8;
-    background-color: #fff;
+    background-color: var(--slaybeige);
     background-clip: padding-box;
     border: 1px solid #ced4da;
     border-radius: .25rem;
@@ -42,21 +60,30 @@ fieldset {
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
-.container--login {
+.login__container {
     text-align: center;
+    background-color: var(--slaybeige);
 }
 
 .form--login {
     background-size: cover;
     background-position-x: center;
+    /* border: 5rem;
+    border-color: #00477d; */
     z-index: 1;
     min-height: 25rem;
     min-width: 45rem;
-    padding: 0 5rem;
+    padding: 5rem 5rem 0;
     background-color: hsla(51, 95%, 63%, 0.925);
     background-blend-mode: overlay;
     background-repeat: no-repeat;
+    width: 50%;
+    margin-bottom: 3%;
 }
+
+/* .link--register {
+    
+} */
 
 .button--close {
     position: relative;
@@ -67,3 +94,4 @@ fieldset {
     min-width: 15rem;
     min-height: 5rem;
 }
+
