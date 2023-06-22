@@ -26,7 +26,7 @@ export const RecipeList = ({ initialModalOpen }) => {
       <div className="header-container">
         <h2 className="homepage_header">Featured Recipes</h2>
         <button
-          className="top-bottom_button"
+          className="form_button"
           onClick={() => navigate("/recipes/create")}
         >
           Share a Recipe
@@ -35,7 +35,7 @@ export const RecipeList = ({ initialModalOpen }) => {
       <article className="recipes">
         {recipes.map((recipe) => (
           <section key={`recipe--${recipe.id}`} className="recipe">
-            <header className="recipe_header">Recipe: {recipe.name}</header>
+            <header className="recipe_header">{recipe.name}</header>
             <div className="recipe_text">Posted by {recipe?.author?.username} | {recipe.create_date} | Rated: {recipe.average_rating}/5 TastyStars</div>
             <div className="recipe_text">Category: {recipe?.category?.name}</div>
             <div className="recipe_text">Cook Time: {recipe.cook_time} | Prep Time: {recipe.prep_time} </div>

@@ -25,8 +25,8 @@ export const Profile = () => {
   return (
     <>
     <h2 className='profile_header'>My Recipes</h2>
-    <div className='my_recipes'>  
-      <div className='my_recipe'>
+    <div className='recipes'>  
+      <div className='recipe'>
         {profile.map(recipe => (
           <li key={recipe.id}>
             <header className='recipe_header'>Recipe: {recipe.name}</header>
@@ -47,10 +47,18 @@ export const Profile = () => {
                 </div>
               ))}
             </div>
-            <button onClick={() => handleDelete(recipe.id)} className="top-bottom_button">Delete</button>
+            <div className="button-container">
+            <button onClick={() => handleDelete(recipe.id)} className="fill-button">
+              <span class="button-text">Delete</span>
+              <div class="fill"></div>
+            </button>
             <Link to={`/recipes/edit/${recipe.id}`}>
-              <button className="top-bottom_button">Edit</button>
+              <button className="fill-button">
+              <span class="button-text">Edit</span>
+              <div class="fill"></div>
+              </button>
             </Link>
+            </div>
           </li>
         ))}
       </div>

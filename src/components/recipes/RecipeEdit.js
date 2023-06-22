@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { getRecipeById, editRecipe } from "../../managers/RecipeManager";
 import { getCategories } from "../../managers/CategoryManager";
+import "./RecipeForm.css"
 
 export const RecipeEdit = () => {
   const navigate = useNavigate();
@@ -57,12 +58,13 @@ export const RecipeEdit = () => {
   };
 
   return (
-    <div>
-    <h3>Edit Recipe</h3>
-    <form className="recipe_form" onSubmit={handleSubmit}>
+    <div className="omnipotent-container">
+    
+    <form className="form-style" onSubmit={handleSubmit}>
+    <h3 className="form_header">Edit Recipe</h3>
       <fieldset>
-        <div>
-          <label htmlFor="name">Name:</label>
+        <div className="form-group">
+          <label htmlFor="form-group">Name:</label>
           <input
             required
             autoFocus
@@ -77,7 +79,7 @@ export const RecipeEdit = () => {
       </fieldset>
       <fieldset>
         <div className="form-group">
-          <label htmlFor="category">Category:</label>
+          <label htmlFor="category" className="dropdown_label">Category:</label>
           <select
             value={recipe.category}
             className="form-control"
@@ -94,7 +96,7 @@ export const RecipeEdit = () => {
         </div>
       </fieldset>
       <fieldset>
-        <div>
+        <div className="form-group">
           <label htmlFor="image_path">Image URL:</label>
           <input
             required
@@ -109,12 +111,12 @@ export const RecipeEdit = () => {
         </div>
       </fieldset>
       <fieldset>
-        <div>
+        <div className="form-group">
           <label htmlFor="summary">Summary of Recipe:</label>
           <textarea
             required
             autoFocus
-            className="form-control"
+            className="text_description"
             placeholder="Provide a fun blurb about your recipe!"
             name="summary"
             value={recipe.summary}
@@ -123,7 +125,7 @@ export const RecipeEdit = () => {
         </div>
       </fieldset>
       <fieldset>
-        <div>
+        <div className="form-group"> 
           <label htmlFor="cook_time">Cook Time:</label>
           <input
             required
@@ -138,7 +140,7 @@ export const RecipeEdit = () => {
         </div>
       </fieldset>
       <fieldset>
-        <div>
+        <div className="form-group">
           <label htmlFor="prep_time">Prep Time:</label>
           <input
             required
@@ -153,7 +155,7 @@ export const RecipeEdit = () => {
         </div>
       </fieldset>
       <fieldset>
-        <div>
+        <div className="form-group">
           <label htmlFor="total_time">Total Time:</label>
           <input
             required
@@ -168,12 +170,12 @@ export const RecipeEdit = () => {
         </div>
       </fieldset>
       <fieldset>
-        <div>
+        <div className="form-group">
           <label htmlFor="ingredients">Ingredients and Measurements:</label>
           <textarea
             required
             autoFocus
-            className="form-control"
+            className="text_description"
             placeholder="Please enter the required ingredients and measurements..."
             name="ingredients"
             value={recipe.ingredients}
@@ -182,12 +184,12 @@ export const RecipeEdit = () => {
         </div>
       </fieldset>
       <fieldset>
-        <div>
+        <div className="form-group">
           <label htmlFor="preparation">Preparation:</label>
           <textarea
             required
             autoFocus
-            className="form-control"
+            className="text_description"
             placeholder="Please enter step-by-step instructions!"
             name="preparation"
             value={recipe.preparation}
@@ -196,7 +198,7 @@ export const RecipeEdit = () => {
         </div>
       </fieldset>
       <fieldset>
-        <div>
+        <div className="form-group">
           <label htmlFor="create_date">Post Date:</label>
           <input
             required
@@ -209,7 +211,7 @@ export const RecipeEdit = () => {
           />
         </div>
       </fieldset>
-      <button type="submit" className="btn btn-primary">
+      <button type="submit" className="form_button">
         Save Recipe
       </button>
     </form>

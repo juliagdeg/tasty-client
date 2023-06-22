@@ -18,7 +18,7 @@ export const NavBar = () => {
                 {
                     (localStorage.getItem("auth_token") !== null) ?
                         <li className="nav__item">
-                            <Link className="nav-link fakeLink"
+                            <Link className="logout-link"
                                 onClick={() => {
                                     localStorage.removeItem("auth_token")
                                     navigate('/login')

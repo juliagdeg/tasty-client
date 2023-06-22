@@ -52,7 +52,7 @@
 }
 
 .comment_header {
-    font-family: var(--Work-Sans);
+    font-family: 'Raleway', sans-serif;
     color: var(--staryellow);
     font-size: large;
     text-align: left;
