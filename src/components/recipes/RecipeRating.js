@@ -1,14 +1,13 @@
 import { useState, useEffect } from "react";
 import { rateRecipe } from "../../managers/RecipeManager";
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 import React from "react";
 import Lottie from "react-lottie";
 import animationData from "./staranimation.json";
 import "./Modal.css";
 
-const Modal = ({ isOpen, onClose }) => {
-  const { id } = useParams();
-
+const Modal = ({ isOpen, onClose, recipeId }) => {
+  // const { id } = useParams();
   const [newScore, setNewScore] = useState({
     score: 0,
   });
@@ -27,8 +26,10 @@ const Modal = ({ isOpen, onClose }) => {
   };
 
   const handleRatingSubmit = (evt) => {
+    // console.log(id)
+    // console.log(newScore)
     evt.preventDefault();
-    rateRecipe(id, newScore)
+    rateRecipe(recipeId, newScore)
       .then(() => setRatingSubmitted(true)) // Set ratingSubmitted to true upon successful rating submission
       .catch((error) => console.error(error));
   };

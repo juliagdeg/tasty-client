@@ -57,6 +57,14 @@
     list-style-type: none;
 }
 
+.navbar__list {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 70%
+}
+
 .logout-link{
     color: #CC8B65!important;
     text-decoration: none;

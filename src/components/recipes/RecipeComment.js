@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { createRecipeComment } from "../../managers/RecipeManager";
 import { useNavigate, useParams } from "react-router-dom";
+import "./Comment.css"
 
 // define the id in useParam
 export const Comment = () => {
@@ -13,13 +14,16 @@ export const Comment = () => {
     });
 
     return (
-        <form className="comment_form">
+        <div className="omnipotent-container">
+        <form className="form-style form-addons">
+            <div>
             <label>
                 Make a Comment
             </label>
             <input
                 required autoFocus
                 type="textarea"
+                className="form-control"
                 placeholder="Got a spicy take?"
                 value={newComment.content}
                 onChange={(evt) => {
@@ -28,6 +32,8 @@ export const Comment = () => {
                     setNewComment(copy)
                 }}
             />
+            </div>
+            <div>
             <label htmlFor="date">Comment Date: </label>
                     <input
                         required autoFocus
@@ -42,6 +48,7 @@ export const Comment = () => {
                                 setNewComment(copy)
                             }
                         } />
+            </div>
             <button
                 onClick={(evt) => {
                     evt.preventDefault();
@@ -49,9 +56,10 @@ export const Comment = () => {
                         .then(() => navigate("/recipes"))
                         .catch((error) => console.error(error));
                 }}
-                className="btn btn-primary">
+                className="form_button">
                     Post Comment
             </button>
         </form>
+        </div>
     )
 }

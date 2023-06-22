@@ -8,6 +8,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 9;
   }
   
   .modal-content {
@@ -15,6 +16,8 @@
     background-color: white;
     padding: 20px;
     border-radius: 4px;
+    height: 20%;
+    z-index: 10;
   }
   
   .close-button {
