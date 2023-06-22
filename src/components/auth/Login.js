@@ -34,12 +34,11 @@ export const Login = () => {
                 <div>Username or password was not valid.</div>
                 <button className="button--close" onClick={e => invalidDialog.current.close()}>Close</button>
             </dialog>
-            <section>
+            <section className="login_container">
                 <form className="form--login" onSubmit={handleLogin}>
-                    <h1>Tasty Trails</h1>
-                    <h2>Please sign in</h2>
+                    <h2 className="login__header">Please sign in</h2>
                     <fieldset>
-                        <label htmlFor="inputUsername"> Username address </label>
+                        <label htmlFor="inputUsername"> Username</label>
                         <input ref={username} type="username" id="username" className="form-control" placeholder="Username address" required autoFocus />
                     </fieldset>
                     <fieldset>
@@ -49,12 +48,17 @@ export const Login = () => {
                     <fieldset style={{
                         textAlign: "center"
                     }}>
-                        <button className="btn btn-1 btn-sep icon-send" type="submit">Sign In</button>
+                        <button className="fill-button" type="submit">
+                            <span class="button-text">Sign In</span>
+                            <div class="fill"></div>
+                        </button>
                     </fieldset>
                 </form>
             </section>
             <section className="link--register">
-                <Link to="/register">Not a member yet?</Link>
+                <Link to="/register">
+                <button className="top-bottom_button">Not a member yet? Your tasty journey starts here.</button>
+                </Link>
             </section>
         </main>
     )

@@ -40,6 +40,7 @@
     text-decoration: none;
     font-size: 200%;
     font-family: 'Work Sans', sans-serif;
+    font-weight: bold;
     color: var(--cornyellow)
 }
 
@@ -49,6 +50,7 @@
     font-family: 'Work Sans', sans-serif;
     color: var(--cornyellow);
     list-style-type: none;
+    font-weight: bold;
 }
 
 .navbar__item {

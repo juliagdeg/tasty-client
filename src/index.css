@@ -16,6 +16,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--slaybeige);
 }
 
 code {
@@ -23,48 +24,64 @@ code {
     monospace;
 }
 
-.left-right_button {
-  position: relative;
-  background-color: var(--slaybeige);
-  border: 2px solid var(--tastyblue);
-  color: var(--hungryblue);
-  font-weight: bold;
-  padding: 10px 20px;
-  z-index: 1;
-}
+  .fill-button {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid var(--hungryblue);
+    border-radius: 20px;
+    background-color: var(--staryellow);
+    overflow: hidden;
+  }
 
-.left-right_button::before,
-.left-right_button::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 0;
-  background-color: var(--cornyellow);
-  transition: width 0.5s ease;
-  z-index: -1;
-}
+  .button-text {
+    position: relative;
+    z-index: 2;
+    color: var(--hungryblue)
+  }
 
-.left-right_button::before {
-  left: 0;
-}
+  .fill {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+  }
 
-.left-right_button::after {
-  right: 0;
-}
+  .fill:before,
+  .fill:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background-color: var(--slaybeige);
+    width: 50%;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease-in-out;
+  }
 
-.left-right_button:hover::before {
-  width: 50%;
-}
+  .fill:before {
+    left: 0;
+  }
 
-.left-right_button:hover::after {
-  width: 50%;
-}
+  .fill:after {
+    right: 0;
+    transform-origin: right;
+  }
+
+  .fill-button:hover .fill:before,
+  .fill-button:hover .fill:after {
+    transform: scaleX(1);
+  }
+
 
 .top-bottom_button {
   position: relative;
   background-color: var(--slaybeige);
   border: 2px solid var(--tastyblue);
+  border-radius: 50px;
   color: var(--hungryblue);
   font-weight: bold;
   margin: 1rem;
@@ -80,6 +97,7 @@ code {
   right: 0;
   height: 0;
   background-color: var(--cornyellow);
+  /* border-radius: 50px; */
   transition: height 0.5s ease;
   z-index: -1;
 }

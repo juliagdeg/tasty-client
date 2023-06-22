@@ -1,18 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap');
-
-/* @font-face {
-    font-family: 'CustomFont';
-    src: url('./YourFontFile.ttf') format('truetype');
-    /* Additional font properties (e.g., font-weight, font-style) can be specified here */
-  /* }
-  font-family: 'Work Sans', sans-serif; */ 
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
 
 :root {
     --tastyblue: #018ecb;
     --cornyellow: #ffde59;
     --slaybeige: #feffea;
     --hungryblue: #00477d;
-    --staryellow: #ffce38
+    --staryellow: #ffce38;
 }
 
 /* RECIPE CARD STYLING */
@@ -23,13 +16,12 @@
     flex-direction: row-reverse;
     justify-content: space-around;
 }
-/* I would like a border color around the recipe card */
-/* Also need to implement image and image styling later */
+
 .recipe {
     display: flex;
     flex-direction: column;
     justify-content: left;
-    background: linear-gradient(to bottom right, var(--hungryblue), var(--tastyblue));
+    background: var(--hungryblue);
     border-radius: 10px;
     padding: 0.5rem;
     margin: 1rem;
@@ -39,7 +31,7 @@
 }
 
 .recipe_header {
-    font-family: var(--Work-Sans);
+    font-family: 'Raleway', sans-serif;
     color: var(--staryellow);
     font-size: xx-large;
     text-align: center;
@@ -50,14 +42,15 @@
     margin: auto;
     margin-top: 15px;
     margin-bottom: 15px;
-    font-family: var(--Work-Sans);
+    font-family: 'Raleway', sans-serif;
     color: var(--slaybeige)
 }
 
 /* COMMENT DIV STYLING */
 
 .comment_header {
-    font-family: var(--Work-Sans);
+    font-family: 'Raleway', sans-serif;
+    font-weight: bolder;
     color: var(--staryellow);
     font-size: large;
     text-align: center;
@@ -65,20 +58,53 @@
 
 /* I want the comment section on each recipe to feel blocked off ?? */
 .comment_container {
-    color: var(--cornyellow)
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .comment {
-    width: 70%;
-    margin: auto;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    font-family: var(--Work-Sans);
-    color: var(--slaybeige)
+    background-color: #f2f2f2; /* Change the background color as needed */
+    padding: 10px;
+    margin-bottom: 10px;
+    color: #00477d;
+    border-radius: 30px; /* Add spacing between comments */
+    /* Add any other styling for comments */
+}
+
+.comment_container .comment {
+    color: #00477d;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold; /* Set the text color */
+}
+
+
+.header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .homepage_header {
-    font-family: var(--Work-Sans);
-    font-size: 35px;
-    text-align: left
+    text-align: center
+}
+
+.top-bottom_button {
+    align-self: flex-end;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: auto; /* Pushes the buttons to the bottom */
+}
+
+.fill-button {
+    margin-left: 5px;
+}
+
+.create_button {
+    float: right
 }

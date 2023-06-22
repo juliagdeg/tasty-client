@@ -10,11 +10,36 @@
 /* ADD CSS STYLING */
 
 .form_container {
-    padding-left: 50px;
-    padding-right: 25px;
-    padding-top: 10px;
-    padding-bottom: 25px;
-    /* margin: auto; */
-    /* display: flex;
-    flex-wrap: wrap; */
-}
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f5f5;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  fieldset {
+    margin-bottom: 10px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .textarea {
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    resize: vertical;
+  }
+  
+  input[type="text"],
+  select {
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }

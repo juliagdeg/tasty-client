@@ -28,22 +28,11 @@ export const RecipeForm = () => {
         create_date: new Date().toISOString().slice(0,10)
     })
 
-    // const submitRecipe = (evt) => {
-    //     evt.preventDefault()
-
-    //     createRecipe(newRecipe)
-    //         .then(() => navigate("/recipes"))
-    // }
-
-    // const submitRecipe = (evt) => {
-    //     const copy = {...newRecipe}
-    //     copy[evt.target.]
-    // }
-
     return (
         <form className="form_container">
+            <h2 className="form_header">Share a tasty dish!</h2>
             <fieldset>
-                <div>
+                <div className="form-group">
                     <label htmlFor="name">Name: </label>
                     <input
                         required autoFocus
@@ -60,6 +49,7 @@ export const RecipeForm = () => {
                         } />
                 </div>
             </fieldset>
+
             <fieldset>
                 <div className="form-group">
                     <label className="dropdown_label" htmlFor="category">How would you categorize this tasty food? </label>
@@ -101,7 +91,7 @@ export const RecipeForm = () => {
                 </div>
             </fieldset>
             <fieldset>
-                <div>
+                <div className="form-group">
                     <label htmlFor="summary">Summary of Recipe: </label>
                     <textarea
                         required autoFocus
@@ -119,7 +109,7 @@ export const RecipeForm = () => {
                 </div>
             </fieldset>
             <fieldset>
-                <div>
+                <div className="form-group">
                     <label htmlFor="cook_time">Cook Time: </label>
                     <input
                         required autoFocus
@@ -137,7 +127,7 @@ export const RecipeForm = () => {
                 </div>
             </fieldset>
             <fieldset>
-                <div>
+                <div className="form-group">
                     <label htmlFor="prep_time">Prep Time: </label>
                     <input
                         required autoFocus
@@ -155,7 +145,7 @@ export const RecipeForm = () => {
                 </div>
             </fieldset>
             <fieldset>
-                <div>
+                <div className="form-group">
                     <label htmlFor="total_time">Total Time: </label>
                     <input
                         required autoFocus
@@ -173,7 +163,7 @@ export const RecipeForm = () => {
                 </div>
             </fieldset>
             <fieldset>
-                <div>
+                <div className="form-group">
                     <label htmlFor="ingredients">Ingredients and Measurements: </label>
                     <textarea
                         required autoFocus
@@ -191,7 +181,7 @@ export const RecipeForm = () => {
                 </div>
             </fieldset>
             <fieldset>
-                <div>
+                <div className="form-group">
                     <label htmlFor="preparation">Preparation: </label>
                     <textarea
                         required autoFocus
@@ -209,7 +199,7 @@ export const RecipeForm = () => {
                 </div>
             </fieldset>
             <fieldset>
-                <div>
+                <div className="form-group">
                     <label htmlFor="date">Post Date: </label>
                     <input
                         required autoFocus
