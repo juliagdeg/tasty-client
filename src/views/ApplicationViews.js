@@ -28,21 +28,3 @@ export const ApplicationViews = () => {
         </Routes>
     </>
 }
-
-// export const ApplicationViews = () => {
-
-// }
-
-//     return (
-//     <Routes>
-//     <Route path="/" element={
-//         <>
-//             <Outlet />
-//         </>
-//     }>
-//         <Route path="/recipes" element={<RecipeList />} />
-//         <Route path="/recipes/create" element={<RecipeForm /> } />
-//         <Route path="/profile" element={<Profile /> } />
-//     </Route>
-// </Routes>
-// )

@@ -36,7 +36,10 @@ export const RecipeList = ({ initialModalOpen }) => {
       <article className="recipes">
         {recipes.map((recipe) => (
           <section key={`recipe--${recipe.id}`} className="recipe">
-            <header className="recipe_header">{recipe.name}</header>
+            <header className="recipe_header">
+              {recipe.name}
+              {recipe.image_path && <img src={recipe.image_path} alt="Recipe" />}
+            </header>
             <div className="recipe_text">Posted by {recipe?.author?.username} | {recipe.create_date} | Rated: {recipe.average_rating}/5 TastyStars</div>
             <div className="recipe_text">Category: {recipe?.category?.name}</div>
             <div className="recipe_text">{recipe.summary}</div>

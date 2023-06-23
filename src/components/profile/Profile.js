@@ -28,14 +28,14 @@ export const Profile = () => {
     <div className='recipes'>  
       <div className='recipe'>
         {profile.map(recipe => (
-          <li key={recipe.id}>
-            <header className='recipe_header'>Recipe: {recipe.name}</header>
-            <div className='recipe_text'>Posted by {recipe.author.username}</div>
-            <div className='recipe_text'>Rating: {recipe.average_rating}</div>
-            <div className='recipe_text'>Category: {recipe.category.name}</div>
-            <div className='recipe_text'>Posted on: {recipe.create_date}</div>
-            <div className='recipe_text'>Cook Time: {recipe.cook_time}</div>
-            <div className='recipe_text'>Prep Time: {recipe.prep_time}</div>
+          <section key={recipe.id}>
+            <header className='recipe_header'>
+              {recipe.name}
+              {recipe.image_path && <img src={recipe.image_path} alt="Recipe" />}
+            </header>
+            <div className='recipe_text'>Posted by {recipe.author.username} | {recipe.create_date} | Rated: {recipe.average_rating}/5 TastyStars | {recipe.category.name}</div>
+            <div className="recipe_text">{recipe.summary}</div>
+            <div className="recipe_text">Cook Time: {recipe.cook_time} | Prep Time: {recipe.prep_time} </div>
             <div className='recipe_text'>Total Time: {recipe.total_time}</div>
             <div className='recipe_text'>Ingredients: {recipe.ingredients}</div>
             <div className='recipe_text'>Preparation: {recipe.preparation}</div>
@@ -59,7 +59,7 @@ export const Profile = () => {
               </button>
             </Link>
             </div>
-          </li>
+          </section>
         ))}
       </div>
     </div>

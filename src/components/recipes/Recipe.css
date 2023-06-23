@@ -28,14 +28,22 @@
     width: 40%;
     padding: auto;
     box-shadow: 3px 3px 5px gray;
-}
-
-.recipe_header {
+  }
+  
+  .recipe_header {
     font-family: 'Raleway', sans-serif;
     color: var(--staryellow);
     font-size: xx-large;
     text-align: center;
-}
+    position: relative;
+  }
+  
+  .recipe_header img {
+    display: block;
+    max-width: 100%;
+    max-height: 200px; /* Adjust the height as needed */
+    margin: 0 auto;
+  }
 
 .recipe_text {
     width: 70%;

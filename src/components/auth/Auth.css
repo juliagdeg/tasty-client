@@ -39,6 +39,12 @@ fieldset {
     font-family: 'Raleway', sans-serif;
 }
 
+.register-header {
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bolder;
+}
+
 .label--login {
     width: 8rem;
     display: inline-block;
