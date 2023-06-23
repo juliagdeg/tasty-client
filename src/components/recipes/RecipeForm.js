@@ -29,7 +29,8 @@ export const RecipeForm = () => {
     })
 
     return (
-        <form className="form_container">
+        <div className="omnipotent-container">
+        <form className="form-style">
             <h2 className="form_header">Share a tasty dish!</h2>
             <fieldset>
                 <div className="form-group">
@@ -53,7 +54,10 @@ export const RecipeForm = () => {
             <fieldset>
                 <div className="form-group">
                     <label className="dropdown_label" htmlFor="category">How would you categorize this tasty food? </label>
-                    <select value={newRecipe.category} onChange={(event) => {
+                    <select 
+                        value={newRecipe.category} 
+                        className="form-control"
+                        onChange={(event) => {
                         const copy = {...newRecipe}
                         copy.category = event.target.value
                         setNewRecipe(copy)
@@ -76,9 +80,8 @@ export const RecipeForm = () => {
             <div className="form-group">
                     <label className="image_path_label" htmlFor="image_path">Please provide an image url:</label>
                     <input
-                        required autoFocus
                         type="text"
-                        className="text_url"
+                        className="form-control"
                         placeholder="Paste your url here..."
                         value={newRecipe.image_path}
                         onChange={
@@ -94,9 +97,8 @@ export const RecipeForm = () => {
                 <div className="form-group">
                     <label htmlFor="summary">Summary of Recipe: </label>
                     <textarea
-                        required autoFocus
                         type="textarea"
-                        className="form-control"
+                        className="text_description"
                         placeholder="Provide a fun blurb about your recipe!"
                         value={newRecipe.summary}
                         onChange={
@@ -112,7 +114,6 @@ export const RecipeForm = () => {
                 <div className="form-group">
                     <label htmlFor="cook_time">Cook Time: </label>
                     <input
-                        required autoFocus
                         type="text"
                         className="form-control"
                         placeholder="Please enter COOK TIME..."
@@ -130,7 +131,6 @@ export const RecipeForm = () => {
                 <div className="form-group">
                     <label htmlFor="prep_time">Prep Time: </label>
                     <input
-                        required autoFocus
                         type="text"
                         className="form-control"
                         placeholder="Please enter PREP TIME..."
@@ -148,7 +148,6 @@ export const RecipeForm = () => {
                 <div className="form-group">
                     <label htmlFor="total_time">Total Time: </label>
                     <input
-                        required autoFocus
                         type="text"
                         className="form-control"
                         placeholder="Please enter TOTAL TIME..."
@@ -166,9 +165,8 @@ export const RecipeForm = () => {
                 <div className="form-group">
                     <label htmlFor="ingredients">Ingredients and Measurements: </label>
                     <textarea
-                        required autoFocus
                         type="textarea"
-                        className="form-control"
+                        className="text_description"
                         placeholder="Please enter your required ingredients"
                         value={newRecipe.ingredients}
                         onChange={
@@ -184,9 +182,8 @@ export const RecipeForm = () => {
                 <div className="form-group">
                     <label htmlFor="preparation">Preparation: </label>
                     <textarea
-                        required autoFocus
                         type="textarea"
-                        className="form-control"
+                        className="text_description"
                         placeholder="Please enter step by step instructions!"
                         value={newRecipe.preparation}
                         onChange={
@@ -202,7 +199,6 @@ export const RecipeForm = () => {
                 <div className="form-group">
                     <label htmlFor="date">Post Date: </label>
                     <input
-                        required autoFocus
                         type="date"
                         className="form-control"
                         placeholder="Please enter the post date for your recipe"
@@ -220,9 +216,10 @@ export const RecipeForm = () => {
                 evt.preventDefault()
                 createRecipe(newRecipe)
                 .then(() => navigate("/recipes"))
-            }} className="top-bottom_button">
+            }} className="form_button">
                 Share Your Recipe!
             </button>
         </form>
+        </div>
     )
 }

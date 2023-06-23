@@ -61,6 +61,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    font-family: 'Raleway', sans-serif;
 }
 
 .comment {
@@ -86,13 +87,20 @@
 }
 
 .homepage_header {
-    text-align: center
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    font-size: xx-large;
 }
 
 .top-bottom_button {
     align-self: flex-end;
     margin-top: 10px;
     margin-left: 20px;
+    margin-right: 70px;
+}
+
+.span.button-text {
+    font-family: 'Raleway', sans-serif;
 }
 
 .button-container {
@@ -103,8 +111,10 @@
 
 .fill-button {
     margin-left: 5px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
 }
 
-.create_button {
-    float: right
+.form_button {
+    float: right;
 }

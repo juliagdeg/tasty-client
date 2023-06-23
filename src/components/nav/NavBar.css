@@ -57,6 +57,21 @@
     list-style-type: none;
 }
 
+.logout-link{
+    color: #CC8B65!important;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 10em;
+    font-size: 200%;
+    list-style-type: none;
+}
+
+.logout-link:hover{
+    color:white!important;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
 /*---------LINK ANIMATIONS------------*/
 
 .navbar__link {
@@ -68,16 +83,16 @@
 	display: flex;
 	flex-wrap: wrap;
 	
-    .navbar__item {
+	.navbar__item {
 		margin-left: .75em;
 		margin-right: .75em;
 	}
 	
 	&:hover {
 		a {
-			color: var(--hungryblue);
+			color: var(--darkblue);
 			&:hover {
-				color: var(--staryellow);
+				color: var(--happygreen);
 				box-shadow: 0 2px 0 0 currentcolor;
 			}
 		}
