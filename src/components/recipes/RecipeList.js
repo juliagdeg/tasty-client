@@ -19,6 +19,7 @@ export const RecipeList = ({ initialModalOpen }) => {
 
   const closeModal = () => {
     setModalOpen(false);
+    getAllRecipes().then((data) => setRecipes(data));
   };
 
   return (
@@ -38,6 +39,7 @@ export const RecipeList = ({ initialModalOpen }) => {
             <header className="recipe_header">{recipe.name}</header>
             <div className="recipe_text">Posted by {recipe?.author?.username} | {recipe.create_date} | Rated: {recipe.average_rating}/5 TastyStars</div>
             <div className="recipe_text">Category: {recipe?.category?.name}</div>
+            <div className="recipe_text">{recipe.summary}</div>
             <div className="recipe_text">Cook Time: {recipe.cook_time} | Prep Time: {recipe.prep_time} </div>
             <div className="recipe_text">Total Time: {recipe.total_time}</div>
             <div className="recipe_text">Ingredients: {recipe.ingredients}</div>
@@ -56,7 +58,7 @@ export const RecipeList = ({ initialModalOpen }) => {
                 <div class="fill"></div>
               </button>
                 {isModalOpen && (
-                  <Modal isOpen={isModalOpen} onClose={closeModal} />
+                  <Modal isOpen={isModalOpen} onClose={closeModal} recipeId={recipe.id} />
                 )}
               <button className="fill-button" type="edit__button"
                 onClick={() => {

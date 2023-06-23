@@ -62,15 +62,15 @@ export const Register = () => {
                     <input ref={username} type="text" name="username" className="form-control" placeholder="Username" required />
                 </fieldset>
                 <fieldset>
-                    <label htmlFor="inputPassword"> Password </label>
-                    <input ref={password} type="password" name="password" className="form-control" placeholder="Password" required />
-                </fieldset>
-                <fieldset>
                     <label htmlFor="inputEmail"> Email </label>
                     <input ref={email} type="email" name="password" className="form-control" placeholder="Email" required />
                 </fieldset>
                 <fieldset>
-                    <label htmlFor="verifyPassword"> Verify Password </label>
+                    <label htmlFor="inputPassword"> Password  </label>
+                    <input ref={password} type="password" name="password" className="form-control" placeholder="Password" required />
+                </fieldset>
+                <fieldset>
+                    <label htmlFor="verifyPassword"> Verify Password  </label>
                     <input ref={verifyPassword} type="password" name="verifyPassword" className="form-control" placeholder="Verify password" required />
                 </fieldset>
                 <fieldset>
@@ -80,12 +80,15 @@ export const Register = () => {
                 <fieldset style={{
                     textAlign: "center"
                 }}>
-                    <button className="btn btn-1 btn-sep icon-send" type="submit">Register</button>
+                    <button className="form_button" type="submit">Register</button>
                 </fieldset>
             </form>
-            <section className="link--register">
-                Already registered? <Link to="/login">Login</Link>
-            </section>
+            {/* <section className="link--register">
+            Already registered? 
+                <button className="form_button-register">
+                    <Link to="/login">Login</Link>
+                </button>
+            </section> */}
         </main>
     )
 }

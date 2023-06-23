@@ -36,6 +36,7 @@ fieldset {
 
 .login__header {
     text-align: center;
+    font-family: 'Raleway', sans-serif;
 }
 
 .label--login {

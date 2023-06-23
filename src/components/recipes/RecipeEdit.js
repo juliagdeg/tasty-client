@@ -61,7 +61,7 @@ export const RecipeEdit = () => {
     <div className="omnipotent-container">
     
     <form className="form-style" onSubmit={handleSubmit}>
-    <h3 className="form_header">Edit Recipe</h3>
+    <h2 className="form_header">Edit Recipe</h2>
       <fieldset>
         <div className="form-group">
           <label htmlFor="form-group">Name:</label>
